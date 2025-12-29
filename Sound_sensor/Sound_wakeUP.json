@@ -1,0 +1,8 @@
+{
+  "totalTimeSpent": 130424,
+  "date": "2025-12-23T16:34:00.635Z",
+  "name": "Sound_wakeUP",
+  "platform": "Windows",
+  "board": "PrimusX2",
+  "code": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"rx_config_func\" id=\"y{)IM~MzH7#5=pUuKt1(\" deletable=\"false\" x=\"288\" y=\"100\"><field name=\"RX_MODE\">Rx_ESP</field></block><block type=\"pluto_on_start_loop\" id=\"R$G}1()b7uKs.SPh|$FM\" deletable=\"false\" x=\"301\" y=\"162\"/><block type=\"pluto_loop\" id=\"G:_f8#pF(hfkDTa`@60w\" deletable=\"false\" x=\"296\" y=\"271\"><field name=\"LoopTime\">100</field><statement name=\"FUNCTION_BODY\"><block type=\"controls_if\" id=\"yWE5agf#GWf~8Z`]-;JD\"><value name=\"IF0\"><block type=\"logic_compare\" id=\"C15pO0.?R214~%@m.ak`\"><field name=\"OP\">GT</field><value name=\"A\"><block type=\"adc_read_x2\" id=\"nn{SL9B$0_#a.OVlUh/f\"><field name=\"read_adc\">ADC_1</field></block></value><value name=\"B\"><block type=\"math_number\" id=\"=_qvZ0fQS1;-**Daj6U.\"><field name=\"NUM\">130</field></block></value></block></value><statement name=\"DO0\"><block type=\"take_off_x2\" id=\"Fc@V_(#*;dASqd?d.+#6\"><field name=\"height\">150</field></block></statement><next><block type=\"pluto_monitor_print_x2_var\" id=\"FC!JSo*_{2V{(iNX+w:w\"><value name=\"TEXT0\"><shadow type=\"pluto_monitor_print_x2_text_shadow\" id=\"H4$)tb#gkD6t1(T/f(um\"><field name=\"TEXT\">Sound</field></shadow></value><value name=\"VAR0\"><block type=\"adc_read_x2\" id=\"Cr`3|4/b`EqPC5DPm=3q\"><field name=\"read_adc\">ADC_1</field></block></value></block></next></block></statement></block><block type=\"pluto_on_stop_loop\" id=\"OC]pDS]Jx;BN/:iTz)41\" deletable=\"false\" x=\"299\" y=\"433\"/></xml>"
+}
