@@ -2,38 +2,42 @@
 
 Interval Timer1;
 
-void onLoopStartAutoInsertion() {
+  void onLoopStartAutoInsertion() {
     Timer1.reset();
+    Set_LED(STATUS, OFF);
   }
 
-void onLoopStopAutoInsertion() {
+  void onLoopStopAutoInsertion() {
+    Set_LED(STATUS, ON);
   }
 
-void plutoInit() {
+  void plutoInit() {
     setUserLoopFrequency(100);
     Peripheral_Init(GPIO_1,INPUT);
   }
 
 
-void plutoRxConfig(void) {
+  void plutoRxConfig(void) {
     // Receiver mode: Uncomment one line for ESP or PPM setup.
     Receiver_Mode(Rx_ESP);  // Receiver mode for PrimusX2 / V5
   }
 
-void onLoopStart () {
+  void onLoopStart () {
     onLoopStartAutoInsertion();
     Timer1.set(1000,true);
   }
 
-void plutoLoop () {
+  void plutoLoop () {
     if (Peripheral_Read(GPIO_1) == 0 && Timer1.check()) {
       RcCommand_Set(RC_PITCH,1350);
     } else {
       RcCommand_Set(RC_PITCH,RcData_Get(RC_PITCH));
     }
+    Set_LED(RED,ON);
+    Set_LED(GREEN,ON);
   }
 
-void onLoopFinish() {
+  void onLoopFinish() {
     Timer1.reset();
     onLoopStopAutoInsertion();
   }

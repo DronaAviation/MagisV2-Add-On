@@ -1,29 +1,35 @@
 #include "PlutoPilot.h"
 
-void onLoopStartAutoInsertion() {
-    Set_LED(STATUS,OFF);
+  void onLoopStartAutoInsertion() {
+    Set_LED(STATUS, OFF);
   }
 
-void onLoopStopAutoInsertion() {
+  void onLoopStopAutoInsertion() {
     Set_LED(STATUS, ON);
   }
 
-void plutoInit() {
+  void plutoInit() {
     setUserLoopFrequency(100);
     Peripheral_Init(ADC_1);
   }
 
 
-void plutoRxConfig(void) {
+  void plutoRxConfig(void) {
     // Receiver mode: Uncomment one line for ESP or PPM setup.
     Receiver_Mode(Rx_ESP);  // Receiver mode for PrimusX2 / V5
   }
 
-void onLoopStart () {
+  void onLoopStart () {
     onLoopStartAutoInsertion();
+    Set_LED(BLUE,ON);
   }
 
-void plutoLoop () {
+  void onLoopFinish() {
+    Set_LED(GREEN,ON);
+    onLoopStopAutoInsertion();
+  }
+
+  void plutoLoop () {
     if (Peripheral_Read(ADC_1) > 80 && Peripheral_Read(ADC_1) < 800) {
       Set_LED(RED,OFF);
       Set_LED(GREEN,ON);
@@ -41,8 +47,6 @@ void plutoLoop () {
       Set_LED(GREEN,OFF);
       Set_LED(BLUE,OFF);
     }
-  }
-
-void onLoopFinish() {
-    onLoopStopAutoInsertion();
+    Set_LED(RED,ON);
+    Set_LED(GREEN,ON);
   }
