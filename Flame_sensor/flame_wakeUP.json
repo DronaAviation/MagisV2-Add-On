@@ -1,0 +1,8 @@
+{
+  "code": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"rx_config_func\" id=\"U8SY-(@Z%f]4RTKL_hS]\" deletable=\"false\" x=\"145\" y=\"121\"><field name=\"RX_MODE\">Rx_ESP</field></block><block type=\"pluto_on_start_loop\" id=\"7y]26}fTz9rab+$hBMrp\" deletable=\"false\" x=\"144\" y=\"180\"/><block type=\"pluto_loop\" id=\"zh15YG4sXWUa1c5gyOJz\" deletable=\"false\" x=\"137\" y=\"260\"><field name=\"LoopTime\">100</field><statement name=\"FUNCTION_BODY\"><block type=\"controls_if\" id=\"rqsjShdkRtG17z3!EI@;\"><value name=\"IF0\"><block type=\"logic_compare\" id=\"[4v8VrO`u!fWrF=8(r|n\"><field name=\"OP\">EQ</field><value name=\"A\"><block type=\"gpio_read_x2\" id=\"b3PYSjz#AEmAZ{fgV.BH\"><field name=\"read_pin\">GPIO_1</field></block></value><value name=\"B\"><block type=\"logic_boolean\" id=\"gRvx;[4c(lswd|?9o)X1\"><field name=\"BOOL\">FALSE</field></block></value></block></value><statement name=\"DO0\"><block type=\"take_off_x2\" id=\"4ssGuiLJ]G?o+5%B`.zD\"><field name=\"height\">150</field></block></statement></block></statement></block><block type=\"pluto_on_stop_loop\" id=\"d(#UqRk|41:00_~My{7O\" deletable=\"false\" x=\"134\" y=\"380\"/></xml>",
+  "totalTimeSpent": 195489,
+  "date": "2025-12-23T16:31:44.648Z",
+  "board": "PrimusX2",
+  "platform": "Windows",
+  "name": "flame_wakeUP"
+}

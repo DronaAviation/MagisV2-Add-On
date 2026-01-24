@@ -1,0 +1,6 @@
+{
+  "name": "Laser_Up",
+  "date": "2025-12-29T06:20:54.701Z",
+  "code": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"rx_config_func\" id=\"|Tng1lLO/Dt~loy;QrJP\" deletable=\"false\" x=\"350\" y=\"129\"><field name=\"RX_MODE\">Rx_ESP</field></block><block type=\"pluto_on_start_loop\" id=\"fodXy%1j:S!;uI*geq4H\" deletable=\"false\" x=\"350\" y=\"199\"/><block type=\"pluto_loop\" id=\"{,1ZuQ;#A*NElC64=76}\" deletable=\"false\" x=\"348\" y=\"270\"><field name=\"LoopTime\">100</field><statement name=\"FUNCTION_BODY\"><block type=\"controls_if\" id=\"5/$%qwhaQ1U:}cV-q/M0\"><value name=\"IF0\"><block type=\"logic_compare\" id=\"`c*!eA*Ric+UT[(RV.ue\"><field name=\"OP\">EQ</field><value name=\"A\"><block type=\"gpio_read_x2\" id=\"3|AQlc^c3vMR]u.Mm%OL\"><field name=\"read_pin\">GPIO_1</field></block></value><value name=\"B\"><block type=\"math_number\" id=\"ee4G^[:F-Q+cdA`*X}t)\"><field name=\"NUM\">0</field></block></value></block></value><statement name=\"DO0\"><block type=\"take_off_x2\" id=\"E4IkF.]RRH6nhc/q^?68\"><field name=\"height\">170</field></block></statement></block></statement></block><block type=\"pluto_on_stop_loop\" id=\"wl/GyI-qF(=HoVpU!`bR\" deletable=\"false\" x=\"358\" y=\"438\"/></xml>",
+  "board": "PrimusX2"
+}
