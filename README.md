@@ -11,21 +11,21 @@ Each add-on has a unique 8-character project identifier with prefix **X2-**.
 
 | Add-On Name | Project Code |
 |-------------|--------------|
-| MiniClaw 2.0 | X2-MCLAW |
-| LaserTag | X2-LASRT |
-| GasSense-2 | X2-GS002 |
-| GasSense-135 | X2-GS135 |
-| GasSense-06 | X2-GS006 |
-| FlameSense | X2-FLMSN |
-| IRShield | X2-IRSHD |
-| SkyBanner | X2-SKYBN |
-| AudioSense | X2-AUDSN |
-| LightSense | X2-LGTSN |
-| X-Ranging | X2-XRANG |
-| X-Hybrid | X2-XHYBD |
-| GlowLite | X2-GLITE |
-| Hooter | X2-HOOTR |
-| PlutoGlow | X2-PGLOW |
+| MiniClaw 2.0 | X2_MCLAW |
+| LaserTag | X2_LASRT |
+| GasSense-2 | X2_GS002 |
+| GasSense-135 | X2_GS135 |
+| GasSense-06 | X2_GS006 |
+| FlameSense | X2_FLMSN |
+| IRShield | X2_IRSHD |
+| SkyBanner | X2_SKYBN |
+| AudioSense | X2_AUDSN |
+| LightSense | X2_LGTSN |
+| X-Ranging | X2_XRANG |
+| X-Hybrid | X2_XHYBD |
+| GlowLite | X2_GLITE |
+| Hooter | X2_HOOTR |
+| PlutoGlow | X2_PGLOW |
 
 ---
 
