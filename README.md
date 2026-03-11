@@ -26,7 +26,7 @@ Each add-on has a unique 8-character project identifier with prefix **X2-**.
 | GlowLite | X2_GLITE |
 | Hooter | X2_HOOTR |
 | PlutoGlow | X2_PGLOW |
-
+| PPM Receiver  | X2_RxPPM |
 ---
 
 ## Repository Structure
