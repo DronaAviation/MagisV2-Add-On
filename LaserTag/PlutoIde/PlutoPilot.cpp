@@ -1,6 +1,20 @@
 // Do not remove the include below
 #include "PlutoPilot.h"
 
+/*
+ * Laser-tag input on GPIO_1 — works with active-high OR active-low sensors.
+ *
+ * In plutoInit we read the sensor's idle level once: whatever it reads with no
+ * laser present is "no hit", the opposite level is a "hit". Then plutoLoop just
+ * fires takeoff once when a hit appears.
+ */
+
+#define LASER_PIN   GPIO_1
+#define TAKEOFF_CM  170
+
+static bool idleLevel = false;  // pin level that means "no hit"
+static bool tookOff   = false;
+
 /**
  * Configures Pluto's receiver to use PPM or default ESP mode; activate the line matching your setup.
  * AUX channel configurations is only for PPM recievers if no custom configureMode function is called this are the default setup
@@ -20,30 +34,31 @@ void plutoRxConfig ( void ) {
 
 // The setup function is called once at Pluto's hardware startup
 void plutoInit ( void ) {
-  // Add your hardware initialization code here
-  Peripheral_Init ( GPIO_1, INPUT );
+  // Pull-down so a disconnected pin reads LOW (never a false hit).
+  Peripheral_Init ( LASER_PIN, INPUT_PULL_DOWN );
+
+  // Detect the sensor type: read its idle level now (no laser at power-up).
+  idleLevel = Peripheral_Read ( LASER_PIN );
 }
 
 // The function is called once before plutoLoop when you activate Developer Mode
 void onLoopStart ( void ) {
   // do your one time stuffs here
-  Set_LED ( STATUS, OFF );
-  Set_LED ( BLUE, ON );
+  tookOff = false;
 }
 
 // The loop function is called in an endless loop
 void plutoLoop ( void ) {
-  // Add your repeated code here
-  if ( Peripheral_Read ( GPIO_1 ) == 0 ) {
-    Command_TakeOff ( 170 );
+  // A hit is any level different from the idle level we read in plutoInit.
+  bool hit = ( Peripheral_Read ( LASER_PIN ) != idleLevel );
+
+  if ( hit && !tookOff ) {
+    Command_TakeOff ( TAKEOFF_CM );
+    tookOff = true;
   }
-  Set_LED ( RED, ON );
-  Set_LED ( GREEN, ON );
 }
 
 // The function is called once after plutoLoop when you deactivate Developer Mode
 void onLoopFinish ( void ) {
   // do your cleanup stuffs here
-  Set_LED ( GREEN, ON );
-  Set_LED ( STATUS, ON );
 }
